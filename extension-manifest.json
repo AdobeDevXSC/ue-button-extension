@@ -1,0 +1,13 @@
+{
+  "name": "ue-new-page",
+  "id": "ue-new-page",
+  "description": "create new page",
+  "version": "0.0.1",
+  "headerMenuButtons": [
+    {
+      "label": "Create New Page\t",
+      "needsModal": true,
+      "id": "create-new-page"
+    }
+  ]
+}
