@@ -5,6 +5,7 @@
 import { Text } from "@adobe/react-spectrum";
 import { register } from "@adobe/uix-guest";
 import { extensionId } from "./Constants";
+import WebPage from "@spectrum-icons/workflow/WebPage";
 import metadata from '../../../../app-metadata.json';
 
 function ExtensionRegistration() {
@@ -20,7 +21,7 @@ function ExtensionRegistration() {
               {
                 'id': 'create-new-page',
                 'label': 'Create New Page	',
-                'icon': 'OpenIn',
+                'icon': 'WebPage',
                 onClick() {
                   const modalURL = "/index.html#/create-new-page-modal";
                   console.log("Modal URL: ", modalURL);

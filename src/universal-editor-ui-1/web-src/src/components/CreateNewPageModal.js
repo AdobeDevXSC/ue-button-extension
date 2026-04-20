@@ -6,22 +6,18 @@ import React, { useState, useEffect } from 'react'
 import { attach } from "@adobe/uix-guest"
 import {
   Flex,
-  Form,
-  ProgressCircle,
   Provider,
   Content,
   defaultTheme,
-  Text,
-  TextField,
-  ButtonGroup,
-  Button,
   Heading,
-  View
+  View,
+  Picker,
+  Item
 } from '@adobe/react-spectrum'
 
 import { extensionId } from "./Constants"
 
-export default function CreateNewPageModal () {
+export default function CreateNewPageModal() {
   // Fields
   const [guestConnection, setGuestConnection] = useState()
 
@@ -40,13 +36,25 @@ export default function CreateNewPageModal () {
   return (
     <Provider theme={defaultTheme} colorScheme='light'>
       <Content width="100%">
-        <Text>Is this sizzle reel over yet?</Text>
-
-        <Flex width="100%" justifyContent="end" alignItems="center" marginTop="size-400">
-          <ButtonGroup align="end">
-            <Button variant="primary" onClick={onCloseHandler}>Close</Button>
-          </ButtonGroup>
-        </Flex>
+        <View paddingX="size-300" paddingY="size-200" width="100%">
+          <Flex
+            direction="column"
+            width="100%"
+            gap="size-300"
+            alignItems="stretch"
+          >
+            <Heading level={3} margin={0}>
+              Select page options
+            </Heading>
+            <Picker
+              label="Page template"
+              placeholder="Select…"
+              width="90%"
+            >
+              <Item key="highlight">Highlight</Item>
+            </Picker>
+          </Flex>
+        </View>
       </Content>
     </Provider>
   )
